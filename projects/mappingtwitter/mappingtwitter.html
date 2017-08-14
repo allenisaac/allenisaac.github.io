@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = 'UTF-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href = 'https://allenisaac.github.io/projects/mappingtwitter/styles.css' rel='stylesheet'>
+<link href = 'https://allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
+
+</head>
+
+
+	<body>
+		<div class = 'wrapper'>
+			<div class = 'main-header-container'>
+				<nav class='navigator'>
+					<li class='title'><a href='https://allenisaac.github.io/index.html' class = 'header-button blog-title'>Isaac Allen</a></li>
+					<li><a href='https://allenisaac.github.io/index.html' class = 'header-button lesser-header'>Home</a></li>
+					<li><a href='https://allenisaac.github.io/html/about.html' class = 'header-button lesser-header'>About</a></li>
+					<li><a href='https://allenisaac.github.io/html/contact.html' class = 'header-button lesser-header'>Contact</a></li>
+				</nav>
+				<div class='footer'>
+				&copy;2017 Isaac Allen
+				</div>
+			</div>
+			<div tabindex='0' class='onclick-dropdown'>
+				<div  class='dropdown-item-container'>
+					<ul class="onclick-menu-content">
+						<li><button onclick="location.href='https://allenisaac.github.io/index.html'">Home</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/html/about.html'">About</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/html/contact.html'">Contact</button></li>
+					</ul>
+				</div>
+			</div>			
+			<div class='right-container'>
+				<div class='project-title'>
+				Mapping Twitter: <p>A Day Long Look at Geocoded Hashtags</p>
+				</div>
+				<div class='description'>
+				<p>This project was done for a course with some specific guidelines in mind.  We were asked to mine twitter data that had geocoding and then map it.  In doing so I had a few questions that I wanted to look into.  The summary below is a more detailed summary than what is included in the web app page.  The project was created using R, twitteR, and Shiny. </p>
+				<p>
+				Starting this project, I wanted to keep the subject matter of the tweets as broad as possible.  I simply wanted to look at as many recent, geocoded tweets as possible, rather than investigating any specific subject.  After looking at my options for gathering this data, I found that streaming the data through twitter’s API was my best bet.  In order to gather a significant amount of data, I chose to stream for 24 hours; this resulted in roughly five million tweets.  The streaming period was from Friday, December 9th at 5pm EST to Saturday, December 10th at 5pm EST.  After gathering the data, I chose to sort by hashtag; I removed very few tweets.  The only significant hashtags that posed any problem were those involving job postings.  Although a few things may need to be changed, including what was removed, the code is mostly reusable, with a fair degree of automation, to report on any number of tweets. </p>
+				<p>
+				The questions I asked and the analyses I preformed were largely exploratory.  With this in mind, what initially caught my eye was the possibility of a multivariate normal distribution of hashtag location.   I also wanted to check for any correlation between time and distance from mean location.  Mean location was found by as an average of latitude and longitude, in this case with little consideration for the decrease in distance between increasing latitude.  After some time, it was clear that both hypotheses were incorrect.  This made me realize that twitter information to travel geographically even faster than I had believed.  
+				If I were to continue this analysis, it would be interesting to get much more data.  I still believe there may be some information, such as location based news, that would have a roughly multivariate normal distribution from mean location and origin, and I also believe that distance would be correlated with time in these cases.  My theory is that less people would stay interested further away, and people have social networks that are generally in a nearby area.  Another problem with this type of analysis is the irregularity with which people use geolocation.  Considering the data gathered was only 1% of the average daily tweets, I don’t feel the sample is good enough.  There probably a lot of bias as a result of the choice to activate geolocation.
+				</p>
+				</div>
+				<div class='unnecessary-container'>
+					<div class = 'outside-button-container'>
+						<li><a href='https://iallen.shinyapps.io/shinyapp/' class='shiny-button'>To the Shiny App</a></li>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

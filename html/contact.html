@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-<link href = 'https://allenisaac.github.io/css/mainpagestyles.css' rel='stylesheet'>
+<link href = 'https://allenisaac.github.io/css/contactstyles.css' rel='stylesheet'>
 <link href = 'https://allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
 
 </head>
@@ -18,11 +18,9 @@
 				<nav class='navigator'>
 					<li class='title'><a href='https://allenisaac.github.io/index.html' class = 'header-button blog-title'>Isaac Allen</a></li>
 					<li><a href='https://allenisaac.github.io/index.html' class = 'header-button lesser-header'>Home</a></li>
-					<li><a href='https://Website/allenisaac.github.io/html/about.html' class = 'header-button lesser-header'>About</a></li>
+					<li><a href='https://allenisaac.github.io/html/about.html' class = 'header-button lesser-header'>About</a></li>
 					<li><a href='https://allenisaac.github.io/html/contact.html' class = 'header-button lesser-header'>Contact</a></li>
 				</nav>
-
-
 				<div class='footer'>
 				&copy;2017 Isaac Allen
 				</div>
@@ -35,36 +33,32 @@
 						<li><button onclick="location.href='https://allenisaac.github.io/html/contact.html'">Contact</button></li>
 					</ul>
 				</div>
-			</div>
+			</div>			
 			<div class='right-container'>
-				<div class = 'project-container'>
-					<a href='https://allenisaac.github.io/projects/gratefuldead/gratefuldead.html'>
-						<figure>
-							<img src='images_assets/dead-icon.png' alt=''>
-							<div class='project-dimmer'>
-								<div class='project-title'>The Grateful Dead, Regionally</div>
-							</div>
-						The Grateful Dead</figure>
-					</a>
-					<a href='https://allenisaac.github.io/projects/mappingtwitter/mappingtwitter.html'>
-						<figure>
-							<img src='images_assets/twitter-map-icon.png' alt=''>
-							<div class='project-dimmer'>
-								<div class='project-title'>Mapping Twitter</div>
-							</div>Mapping Twitter
-						</figure>
-					</a>
-					<a href='https://allenisaac.github.io/projects/noaacleaning/noaacleaning.html'>
-						<figure>
-							<img src='images_assets/noaa-icon.png' alt=''>
-							<div class='project-dimmer'>
-								<div class='project-title'>Cleaning NOAA Data</div>
-							</div>
-						Cleaning NOAA Data</figure>
-					</a>
+				<div class='contact-button-container'>
+					<a href='mailto:iallen868@gmail.com' class = 'contact-button'>Email</a>
+					<a id='separator'>|</a>
+					<a href='https://github.com/allenisaac' class = 'contact-button'>Github</a>
+					<a id='separator'>|</a>
+					<a href='mailto:iallen868@gmail.com' class = 'contact-button CV'>CV</a>
 				</div>
+
+					<form method='POST' action="https://formspree.io/iallen868@gmail.com">
+					
+						<div class='contact-info'>
+							<label><span>Your Name</span>
+							<input type="text" name="name"></label>
+							<label><span>Your Email</span>
+							<input type="email" name="_replyto"></span>
+						</div>
+						<label><span>Message</span>
+						<textarea name='message'></textarea>
+						<div class='submit-container'>
+							<input type="submit" value="Send"><label>
+						</div>
+					</form>
 			</div>
-		</div>
+		
 		
 	</body>
 </html>
