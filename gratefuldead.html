@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = 'UTF-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href = 'file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
+<link href = 'file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/projects/gratefuldead/areachart.css' rel='stylesheet'>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+
+
+</head>
+
+
+	<body>
+		<div class = 'wrapper'>
+			<div class = 'main-header-container'>
+				<nav class='navigator'>
+					<li class='title'><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/index.html' class = 'header-button blog-title'>Isaac Allen</a></li>
+					<li><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/index.html' class = 'header-button lesser-header'>Home</a></li>
+					<li><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/about.html' class = 'header-button lesser-header'>About</a></li>
+					<li><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/contact.html' class = 'header-button lesser-header'>Contact</a></li>
+				</nav>
+				<div class='footer'>
+				&copy;2017 Isaac Allen
+				</div>
+			</div>
+			<div tabindex='0' class='onclick-dropdown'>
+				<div  class='dropdown-item-container'>
+					<ul class="onclick-menu-content">
+						<li><button onclick="location.href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/index.html'">Home</button></li>
+						<li><button onclick="location.href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/about.html'">About</button></li>
+						<li><button onclick="location.href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/contact.html'">Contact</button></li>
+					</ul>
+				</div>
+			</div>			
+			<div class='right-container'>
+				<div class='project-title'>
+				Grateful Dead: <p>Regional Comparisons of the greatfuldead shows</p>
+				</div>
+				<div class='no-graphics'>
+					<p>The Grateful Dead had an extremely abundant touring career, playing over 2300 shows in their 30 years of touring.  With a fanbase and recording policy to match the free nature of their music, there are more live recordings of them than any other band.  A quick look at the live shows from archive.org will allow you to listen to numerous shows, from soundboard to audience recordings.  </p>
+				</div>
+				<div class='chloropleth-container graphics-container'>
+				</div>
+				<div class='no-graphics'>
+					<p>Although their tours spanned through the all 50 states, Canada, Europe, and even Egypt, they were a Bay Area band since the days of The Warlocks and before.  There is a clear bias towards playing in California, but how do the other regions compare? How did the grateful dead play as they travelled through this country? </p>
+				</div>
+				<p class='graph-title'>Songs Played in Each Region, Ordered by Total Plays</p>
+				<div class='area-container graphics-container'>
+				</div>
+				<div class='area-button-container button-container'>
+				</div>
+				<div class='no-graphics'>
+					<p>The West accounts for an average of 40% of the times they played each song, while the Northeast accounts for roughly 30%.   As we move into less popular songs there is an increase in volatility, which is to be expected when there is a smaller sample (fewer times played).   In order to keep some control over volatility, and to not mislead, only songs played more than 10 times were included.   </p>
+					<p>Despite the increased volatility, it seems that the Northeast generally contained an increasing percent of song performances as the popularity decreased, while less popular songs were almost never played in the South.  </p>
+				</div>
+				<p class='graph-title'>Average Uniqueness by Region and State</p>
+				<div class='bar-container graphics-container'>
+				</div>
+				<div class='bar-button-container button-container'>
+				</div>
+				<div class='no-graphics'>
+				</div>
+				<div class='interactive-container'>
+					<div class = 'menu-container'></div>
+					<div class = 'map-container'></div>
+					<div class = 'interactive-textcontainer'></div>
+					<div class='beechart-container'></div>
+				</div>				
+			</div>
+		</div>
+		
+		<script src = 'areachart.js'></script>
+		<script src = 'barchart.js'></script>
+		<script src = 'interactive.js'></script>		
+	</body>
+</html>
