@@ -21,6 +21,12 @@ html,body {
 
 }
 
+.right-container{
+	height:100%;
+	width:80%;
+	float:left;
+	margin-left:20%
+}
 
 
 .navigator a {
@@ -164,12 +170,6 @@ html,body {
 
 
 
-.right-container{
-	height:100%;
-	width:80%;
-	float:left;
-	margin-left:20%
-}
 
 
 .footer {
