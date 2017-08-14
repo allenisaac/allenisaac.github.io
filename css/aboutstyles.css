@@ -1,0 +1,23 @@
+.portrait {
+	max-height: 250px;
+	height:100%;
+	width:auto;
+	padding-left: 5%;
+}
+
+.about-me-title {
+	padding-left: 5%;
+	font-family: 'arial';
+	font-size: 50px;
+	font-weight:bold;
+	color: #606060;
+}
+
+.about-me {
+	padding-left: 5%;
+	padding-right: 5%;
+	max-width: 1000px;
+	font-family: 'arial';
+	color:#606060;
+	
+}
