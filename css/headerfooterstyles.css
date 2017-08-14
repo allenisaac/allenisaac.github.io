@@ -84,6 +84,7 @@ html,body {
 
 @media (max-width:960px){
 	.main-header-container  {display: none;}
+	.right-container { width: 100%; }
 	.onclick-dropdown {    	float:left;
 							position: fixed;
 							display: inline-block; }
