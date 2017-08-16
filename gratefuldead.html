@@ -6,10 +6,11 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-<link href = 'file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
-<link href = 'file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/projects/gratefuldead/areachart.css' rel='stylesheet'>
+<link href = 'https://allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
+<link href = 'https://allenisaac.github.io/projects/gratefuldead/areachart.css' rel='stylesheet'>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
+<script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
 
 
 </head>
@@ -19,10 +20,10 @@
 		<div class = 'wrapper'>
 			<div class = 'main-header-container'>
 				<nav class='navigator'>
-					<li class='title'><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/index.html' class = 'header-button blog-title'>Isaac Allen</a></li>
-					<li><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/index.html' class = 'header-button lesser-header'>Home</a></li>
-					<li><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/about.html' class = 'header-button lesser-header'>About</a></li>
-					<li><a href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/contact.html' class = 'header-button lesser-header'>Contact</a></li>
+					<li class='title'><a href='https://allenisaac.github.io/index.html' class = 'header-button blog-title'>Isaac Allen</a></li>
+					<li><a href='https://allenisaac.github.io/index.html' class = 'header-button lesser-header'>Home</a></li>
+					<li><a href='https://allenisaac.github.io/about.html' class = 'header-button lesser-header'>About</a></li>
+					<li><a href='https://allenisaac.github.io/contact.html' class = 'header-button lesser-header'>Contact</a></li>
 				</nav>
 				<div class='footer'>
 				&copy;2017 Isaac Allen
@@ -31,9 +32,9 @@
 			<div tabindex='0' class='onclick-dropdown'>
 				<div  class='dropdown-item-container'>
 					<ul class="onclick-menu-content">
-						<li><button onclick="location.href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/index.html'">Home</button></li>
-						<li><button onclick="location.href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/about.html'">About</button></li>
-						<li><button onclick="location.href='file:///C:/Users/ialle/Desktop/Website/allenisaac.github.io/html/contact.html'">Contact</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/index.html'">Home</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/about.html'">About</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/contact.html'">Contact</button></li>
 					</ul>
 				</div>
 			</div>			
@@ -42,12 +43,12 @@
 				Grateful Dead: <p>Regional Comparisons of the greatfuldead shows</p>
 				</div>
 				<div class='no-graphics'>
-					<p>The Grateful Dead had an extremely abundant touring career, playing over 2300 shows in their 30 years of touring.  With a fanbase and recording policy to match the free nature of their music, there are more live recordings of them than any other band.  A quick look at the live shows from archive.org will allow you to listen to numerous shows, from soundboard to audience recordings.  </p>
+					<p>The Grateful Dead had one of the most prolific touring careers of any band.  In thirty years of touring, they managed to play over 2300 shows; most of these which were recorded.  In fact, they’re by far the most recorded band, which can be clearly seen with a quick trip to the internet archive’s live music section.  From bootlegs to soundboards and official releases, there is a plethora of material available for enjoyment from the United States and beyond. </p>
 				</div>
 				<div class='chloropleth-container graphics-container'>
 				</div>
 				<div class='no-graphics'>
-					<p>Although their tours spanned through the all 50 states, Canada, Europe, and even Egypt, they were a Bay Area band since the days of The Warlocks and before.  There is a clear bias towards playing in California, but how do the other regions compare? How did the grateful dead play as they travelled through this country? </p>
+					<p>With a repertoire of more than 400 songs, this seemed like a good place to begin.  In order to better understand the touring habits, it can be useful to consider the follow:</p><p class='bullet'>Where were all of these songs played?</p><p class='bullet'>How does location effect the types of songs played? </p><p>In order to reduce visual clutter, all songs that were played less than ten times were removed, leaving 231 left to analyze.  The graph below shows how many times and where each song was played.  They are ordered and ranked by the number of times they were played globally; a full list can be found on setlist.fm.  Simply hover over the graph to get more exact information.</p>
 				</div>
 				<p class='graph-title'>Songs Played in Each Region, Ordered by Total Plays</p>
 				<div class='area-container graphics-container'>
@@ -55,8 +56,17 @@
 				<div class='area-button-container button-container'>
 				</div>
 				<div class='no-graphics'>
-					<p>The West accounts for an average of 40% of the times they played each song, while the Northeast accounts for roughly 30%.   As we move into less popular songs there is an increase in volatility, which is to be expected when there is a smaller sample (fewer times played).   In order to keep some control over volatility, and to not mislead, only songs played more than 10 times were included.   </p>
-					<p>Despite the increased volatility, it seems that the Northeast generally contained an increasing percent of song performances as the popularity decreased, while less popular songs were almost never played in the South.  </p>
+					<p>It is immediately clear that the average percentages of song plays coincides with the regional distribution of shows.  Roughly 40% of all songs were played in the West with the second most frequent location being the Northeast.  This all comes as no surprise, but establishes a layer of reassurance.  In addition, as the songs become less popular the volatility continues to increase.  Again, there’s no surprise here, as a lower sample size will always have more deviation from the average.</p>
+					<p>Despite the increased volatility, there seems to be an increase in the percentage of songs that are played in the Northeast as the rankings decrease.  Contrary to this is the South, which seems to account for fewer of the songs played when looking at less frequently played songs.  Although these assumptions are visually sound, this simple graphic can’t say whether there is any actual difference.  A quick correlation test can give some insight to the accuracy of this statement. </p>
+					
+					<p>While looking at the interactions between songs and locations may be useful, it neglects to consider the concert as a whole.  To do this we can try to quantify how 'unique' a concert was. With the data available, the most obvious way to do so is to consider how likely it is for a specific show to happen.  The logical first step is to find the probability that each song was played; however, this has an adverse side effect.  When finding the joint probability,   there is no chance for a short concert to be considered less likely.  This is due to the fact that all probabilities are, by design, less than one.  Although the number of songs played should be considered, this is not the way to do so.  In order to try to normalize the probabilities with respect to song count, the following equation was used:</p>
+					
+					<div class='math' lang='latex'>
+						(1 + x)^{log( _{n} P_{k})} \n
+						
+					</div><p class='mathexp'>where x is the joint probability of songs played at a concert, n is the total number of songs ever performed, and k is the number of songs at the concert. </p>
+					
+					<p>With our normalized song likelihoods, it is time to consider the number of songs played.  This can be done by simply finding how likely it is to have a certain number of songs.  With this ‘uniqueness’ metric being as arbitrary as it is, the ranking process can be done however we see fit, as long as it is consistent in comparing our results.  For the sake of clarity, a rank of zero to ten will be used.  In order to obtain this rank we’ll first find the negative log of our likelihood.  </p><p>It is common when dealing with likelihood to take the negative log of the results.  As a monotomic function, it is often used to help minimize loss or error in machine learning applications.  However, it is helpful in this case because the calculations were multiplicative rather than additive, which tends to bunch results to one side.  This allows for more linear rankings.  The negation is necessary because the smallest likelihood value should represent the largest uniqueness ranking.  Then a proportional transformation is made to obtain the zero to ten ranking.</p>
 				</div>
 				<p class='graph-title'>Average Uniqueness by Region and State</p>
 				<div class='bar-container graphics-container'>
@@ -64,6 +74,13 @@
 				<div class='bar-button-container button-container'>
 				</div>
 				<div class='no-graphics'>
+					<p>The averages are fairly even across the board, with the West being slightly lower.  I imagine this is from having the earliest shows, which had some issues in these computations (discussed below).  When moving to the state view there is a bit more variability, though it is still fairly consistent across the board.  One interesting point is the stability of the Northeast.</p>
+					
+					<p>What does this tell us?  It seems that wherever you were, the concert could be just as unique as anywhere else.  Always in for a surprise.  It is important to note, that there are some issues with this way of describing ‘uniqueness’.</p>
+					
+					<p>The first major issue is that some of the older and less attended shows are missing set lists.  This unfairly puts them at a lower rank based on the lack of information.  This process also isn’t a very useful way to rank concerts.  It gives us some initial insight, but misses several critical aspects of a concert.  The order, transitions, and most importantly, quality, are missing from the equation.  In the end, the uniqueness and overall quality of a show is wholly up to the viewer, not some naïve probabilistic function.  The individual’s experience with the music is what truly counts.</p>
+					
+					<p>With the addition of venue probability, you can view how an individual concert “scored” below.  Simply enter the date and a short summary will be generated.  Please reload the webpage when resizing the browser to view the full graphic.</p>
 				</div>
 				<div class='interactive-container'>
 					<div class = 'menu-container'></div>
@@ -74,8 +91,8 @@
 			</div>
 		</div>
 		
-		<script src = 'areachart.js'></script>
-		<script src = 'barchart.js'></script>
-		<script src = 'interactive.js'></script>		
+		<script src = 'https://allenisaac.github.io/projects/gratefuldead/areachart.js'></script>
+		<script src = 'https://allenisaac.github.io/projects/gratefuldead/barchart.js'></script>
+		<script src = 'https://allenisaac.github.io/projects/gratefuldead/interactive.js'></script>		
 	</body>
 </html>
