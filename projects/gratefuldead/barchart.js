@@ -36,7 +36,7 @@ var yAxis = d3.axisRight(yBar)
 var gBar = svgBar.append('g')
     .attr("transform", "translate(" + marginBar.left + "," + marginBar.top + ")");
 	
-d3.csv('https://github.com/allenisaac/allenisaac.github.io/projects/gratefuldead/map2data.csv', function(error, data){
+d3.csv('https://allenisaac.github.io/projects/gratefuldead/map2data.csv', function(error, data){
 
 /// initial button styling
 	d3.select('#region')

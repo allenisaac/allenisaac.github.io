@@ -88,7 +88,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
       .attr("class", "state-borders")
       .attr("d", path(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; })));
 
-    d3.csv('https://github.com/allenisaac/allenisaac.github.io/projects/gratefuldead/map2data.csv', type, function(error, data){
+    d3.csv('https://allenisaac.github.io/projects/gratefuldead/map2data.csv', type, function(error, data){
         if (error) throw error;
 		
 		var months = d3.nest()
