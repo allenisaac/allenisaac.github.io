@@ -47,7 +47,7 @@ var gArea = svgArea.append("g")
 			.attr("transform", "translate(" + marginArea.left + "," + marginArea.top + ")");
 			
 					
-d3.csv("https://github.com/allenisaac/allenisaac.github.io/projects/gratefuldead/data.csv", type,function(error, data) {
+d3.csv("allenisaac.github.io/projects/gratefuldead/data.csv", type,function(error, data) {
 	if (error) throw error;
 	yArea.domain([0, 1486]);
 /// button styling
