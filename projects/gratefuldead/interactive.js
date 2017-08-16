@@ -271,7 +271,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 								var yearO = (year == 'Year' || d.data.year == year) ? 1 : 0,
 									monthO = (month == 'Month' || d.data.month == month) ? 1 : 0,
 									dayO = (day == 'Day' || d.data.day == day) ? 1 : 0;
-								if( yearO * monthO * dayO == 1) { return 1} else {return 0.2};								
+								if( yearO * monthO * dayO == 1) { return 1} else {return 1};								
 						});	
 		
 			
@@ -301,7 +301,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 					
 		d3.select('.interactive-textcontainer').append('a')
 					.attr('id','line5')
-					.style('pointer-events', 'all')
+					.attr('target', '_blank')
 					.text('');
 			
 			var updateText = function(year, month, day){
@@ -344,7 +344,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 						d3.select('#line5').text('');
 					}else{
 						d3.select('#line4').text(uniquenessText);
-						d3.select('#line5').text('Setlist').attr('xlink:href',setlistAddress)}
+						d3.select('#line5').text('Setlist').attr('href',setlistAddress)}
 	
 					//create text
 						
