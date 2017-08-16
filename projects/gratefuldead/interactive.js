@@ -70,7 +70,7 @@ var beeAxis = d3.axisBottom(xBee)
 					.ticks(10, '.0s');
 
 var monthOrder = ['Month','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-var	dayOrder = ['Day', '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
+var	dayOrder = ['Day', 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
 
 d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/us.json", function(error, us) {
     if (error) throw error;
@@ -376,7 +376,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 });
 
 function type(d, i, columns) {
-	if (!(d.lat || d.lon || d.n || d.fixedc || d.standardc || d.fixedfinal || d.fixedp ||  d.day || d.year)) return;
+	if (!(d.lat || d.lon || d.n || d.ext || d.fixedc || d.standardc || d.fixedfinal || d.fixedp ||  d.day || d.year)) return;
 	d.lat = +d.lat;
 	d.lon = +d.lon;
 	d.n = +d.n;
