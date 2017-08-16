@@ -69,8 +69,8 @@ var beeAxis = d3.axisBottom(xBee)
 					.tickSize(-beeheight)
 					.ticks(10, '.0s');
 
-var monthOrder = ['Month','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-	dayOrder = ['Day', '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
+var monthOrder = ['Month','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var	dayOrder = ['Day', '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
 
 d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/us.json", function(error, us) {
     if (error) throw error;
@@ -343,7 +343,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 						d3.select('#line5').text('');
 					}else{
 						d3.select('#line4').text(uniquenessText);
-						d3.select('#line5').text('Setlist').attr('href',setlistAddress)}
+						d3.select('#line5').text('Setlist').attr('xlink:href',setlistAddress)}
 	
 					//create text
 						
