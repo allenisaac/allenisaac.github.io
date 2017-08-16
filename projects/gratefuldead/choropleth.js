@@ -16,7 +16,7 @@ var pathChoro = d3.geoPath().projection(projectionChoro);
 var xChoro = d3.scaleLog()
 				.base(Math.E)
 				.domain([1,860])
-				.rangeRound([600,860]);
+				.rangeRound([(3*widthChoro/4),widthChoro]);
 				
 var colorChoro = d3.scaleThreshold()
 				.domain([0, 1.847069,   3.411663,   6.301578,  11.639448,  21.498862, 39.709879,  73.346882, 135.476745, 250.234881, 462.201064, 853.717207])
@@ -28,10 +28,11 @@ var colorChoroAxes = d3.scaleThreshold()
 				
 var inverseColorChoro = d3.scaleThreshold()
 				.domain([0, 1.847069,   3.411663,   6.301578,  11.639448,  21.498862, 39.709879,  73.346882, 135.476745, 250.234881, 462.201064, 853.717207])
-				.range(["#570D4B", "#592555", "#5C3E5F", "#5E576A", "#616F74", "#63887E", "#66A189", "#7FAF9D", "#99BDB2", "#B3CCC6", "#CDDADB", "#E7E9F0"]);			
+				.range(["#570D4B", "#592555", "#5C3E5F", "#5E576A", "#616F74", "#63887E", "#66A189", "#7FAF9D", "#99BDB2", "#B3CCC6", "#CDDADB", "#E7E9F0"]);	
+				
 var gChoro = svgChoro.append('g')
 			.attr('class','choro-key')
-			.attr('transform','translate(0,30)')
+			.attr('transform','translate(' + -widthChoro/4 + ',30)')
 
 gChoro.selectAll('rect')
 				.data(colorChoroAxes.range().map(function(d){ 

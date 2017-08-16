@@ -343,7 +343,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 						d3.select('#line5').text('');
 					}else{
 						d3.select('#line4').text(uniquenessText);
-						d3.select('#line5').text('Setlist').attr('xlink:href',setlistAddress)}
+						d3.select('#line5').text(setlistAddress).attr('xlink:href',setlistAddress)}
 	
 					//create text
 						
