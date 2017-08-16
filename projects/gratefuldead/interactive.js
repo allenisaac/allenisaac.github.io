@@ -68,7 +68,9 @@ var radiusB = d3.scaleSqrt()
 var beeAxis = d3.axisBottom(xBee)
 					.tickSize(-beeheight)
 					.ticks(10, '.0s');
-					
+
+var monthOrder = ['Month','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
+	dayOrder = ['Day', 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
 
 d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/us.json", function(error, us) {
     if (error) throw error;
@@ -92,7 +94,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
         if (error) throw error;
 		
 		var months = d3.nest()
-						.key(function(d){ return d.month; }).sortKeys(d3.ascending)
+						.key(function(d){ return d.month; }).sortKeys(function(a,b) { return monthOrder.indexOf(a) - monthOrder.indexOf(b); })
 						.entries(data);
 		
 		
@@ -101,7 +103,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 						.entries(data);
 
 		var days = d3.nest()
-						.key(function(d){ return d.day; }).sortKeys(d3.ascending)
+						.key(function(d){ return d.day; }).sortKeys(function(a,b) { return dayOrder.indexOf(a) - dayOrder.indexOf(b); })
 						.entries(data);
 						
 		var venueCount = d3.nest()
@@ -296,6 +298,10 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 		d3.select('.interactive-textcontainer').append('p')
 					.attr('id','line4')
 					.text('');
+					
+		d3.select('.interactive-textcontainer').append('p')
+					.attr('id','line5')
+					.text('');
 			
 			var updateText = function(year, month, day){
 				var dateData = data.filter(function(d) {return (d.month == month && d.year == year && d.day == day)})
@@ -304,11 +310,14 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 					d3.select('#line2').text('')
 					d3.select('#line3').text('')
 					d3.select('#line4').text('')
+					d3.select('#line5').text('')
+
 				} else if (dateData.length == 0) {
 					d3.select('#line1').text('')
 					d3.select('#line2').text('')
 					d3.select('#line3').text('')
-					d3.select('#line4').text('') } else {
+					d3.select('#line4').text('') 					
+					d3.select('#line5').text('')} else {
 					var currentVenue = dateData.map(function(d){return d.location});	
 					var thisV = venueCount.filter(function(d){return d.key == currentVenue;});
 					var thisVenueCount = d3.values(thisV).map(function(d) {return d.value});
@@ -320,6 +329,8 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 
 					var uniquenessPerc = formatValue((1 - (uniquenessRank/2318))*100)
 					
+					var setlistAddress = dateData.map(function(d){return d.ext});	
+					
 					var dateText = month + ' ' + day + ', ' + year,
 						venueText = 'The Grateful Dead played at ' + currentVenue + ' ' + thisVenueCount + ' times.',
 						venueText2 = 'It was the ' + ordinal_suffix_of(venueRank) + ' most played venue.',
@@ -329,9 +340,11 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 					d3.select('#line2').text(venueText)
 					d3.select('#line3').text(venueText2)
 					if (d3.values(dateData.map(function(d){return d.n})) == 1) {
-						d3.select('#line4').text('Unfortunately, there was no setlist available for this concert.')
+						d3.select('#line4').text('Unfortunately, there was no setlist available for this concert.');
+						d3.select('#line5').text('');
 					}else{
-						d3.select('#line4').text(uniquenessText)}
+						d3.select('#line4').text(uniquenessText);
+						d3.select('#line5').text('Setlist').attr('href',setlistAddress)}
 	
 					//create text
 						

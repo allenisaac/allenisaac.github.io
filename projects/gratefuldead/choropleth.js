@@ -138,3 +138,5 @@ function ready(error, us, shows) {
 		  .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
 		  .attr("class", "choro-states")
 		  .attr("d", pathChoro);
+		  
+}
