@@ -41,7 +41,7 @@ var formatValue = d3.format(',.2f');
 
 var radius = d3.scaleSqrt()
 				.domain([0, 36])
-				.range([2,15]);
+				.range([3,15]);
 
 var path = d3.geoPath()
 		.projection(projection); 

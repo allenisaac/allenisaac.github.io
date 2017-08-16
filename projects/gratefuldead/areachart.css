@@ -32,6 +32,7 @@
 
 }
 
+
 .button-container {
 	width: 185px;
 	height: 30px;
@@ -121,7 +122,11 @@ body {
 .area {
 	shape-rendering: crispEdges;
 }
-
+.choro-states {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+}
 .tooltip-box {
 	stroke: grey;
 	stroke-width: 1px;
@@ -152,7 +157,7 @@ button {
 button:focus {outline:0;}
 
 .bar:hover {
-	fill: red;
+	fill: #606060;
 	opacity: 0.8;
 }
 
@@ -206,7 +211,7 @@ circle {
 }
 
 circle:hover {
-	fill: red;
+	fill: #BD5280;
 }
 
 .cells path {
