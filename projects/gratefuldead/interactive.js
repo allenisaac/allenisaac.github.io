@@ -70,7 +70,7 @@ var beeAxis = d3.axisBottom(xBee)
 					.ticks(10, '.0s');
 
 var monthOrder = ['Month','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-	dayOrder = ['Day', 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31];
+	dayOrder = ['Day', '1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31'];
 
 d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba169207548a8a3d670c9c2cc719ff05c47/us.json", function(error, us) {
     if (error) throw error;
@@ -299,7 +299,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 					.attr('id','line4')
 					.text('');
 					
-		d3.select('.interactive-textcontainer').append('p')
+		d3.select('.interactive-textcontainer').append('a')
 					.attr('id','line5')
 					.text('');
 			
@@ -322,7 +322,6 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 					var thisV = venueCount.filter(function(d){return d.key == currentVenue;});
 					var thisVenueCount = d3.values(thisV).map(function(d) {return d.value});
 					var venueRank = d3.values(venueCount).findIndex(function(d){return d.key == currentVenue}) + 1
-					console.log(venueRank)
 					var uniquenessScore = formatValue(d3.values(dateData).map(function(d) {return d.fixedfinal}));
 					var uniquenessRankHelp = d3.values(dateData).map(function(d) {return d.ext});
 					var uniquenessRank = d3.values(data).findIndex(function(d){return d.ext == uniquenessRankHelp}) + 1
