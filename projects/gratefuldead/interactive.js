@@ -259,7 +259,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 									monthO = (month == 'Month' || d.month == month) ? 1 : 0,
 									dayO = (day == 'Day' || d.day == day) ? 1 : 0;
 								if( yearO * monthO * dayO == 1) { return null;} else {return 'none';};
-						});
+						})
 				.style('opacity',function(d) {
 								var yearO = (year == 'Year' || d.year == year) ? 1 : 0,
 									monthO = (month == 'Month' || d.month == month) ? 1 : 0,
