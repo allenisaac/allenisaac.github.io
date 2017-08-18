@@ -58,7 +58,11 @@
 				<div class='no-graphics'>
 					<p>It is immediately clear that the average percentages of song plays coincides with the regional distribution of shows.  Roughly 40% of all songs were played in the West with the second most frequent location being the Northeast.  This all comes as no surprise, but establishes a layer of reassurance.  In addition, as the songs become less popular the volatility continues to increase.  Again, there’s no surprise here, as a lower sample size will always have more deviation from the average.</p>
 					<p>Despite the increased volatility, there seems to be an increase in the percentage of songs that are played in the Northeast as the rankings decrease.  Contrary to this is the South, which seems to account for fewer of the songs played when looking at less frequently played songs.  Although these assumptions are visually sound, this simple graphic can’t say whether there is any actual difference.  A quick correlation test can give some insight to the accuracy of this statement. </p>
+				</div><div class='graphics-container correlation-container>
+						<p class='graph-title'>Correlation Coefficient and Confidence Interval</p>
+						<img src=''https://allenisaac.github.io/projects/gratefuldead/correlationGraphsnoaxes.png'></img>
 					
+				</div><div class='no-graphics'>	
 					<p>While looking at the interactions between songs and locations may be useful, it neglects to consider the concert as a whole.  To do this we can try to quantify how 'unique' a concert was. With the data available, the most obvious way to do so is to consider how likely it is for a specific show to happen.  The logical first step is to find the probability that each song was played; however, this has an adverse side effect.  When finding the joint probability,   there is no chance for a short concert to be considered less likely.  This is due to the fact that all probabilities are, by design, less than one.  Although the number of songs played should be considered, this is not the way to do so.  In order to try to normalize the probabilities with respect to song count, the following equation was used:</p>
 					
 					<div class='math' lang='latex'>
