@@ -68,6 +68,16 @@
 	overflow:hidden;
 }
 
+.correlation-container {
+	width:100%;
+	margin: 0 auto;
+}
+
+.correlation-container img {
+	width:100%;
+	height:auto;
+}
+
 .dropmen {
 	margin: 0 2em;
 	font-size:16px;
