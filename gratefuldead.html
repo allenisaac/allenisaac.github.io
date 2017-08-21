@@ -43,11 +43,12 @@
 				Grateful Dead: <p>Regional Comparisons of the greatfuldead shows</p>
 				</div>
 				<div class='no-graphics'>
-					<p>The Grateful Dead had one of the most prolific touring careers of any band.  In thirty years of touring, they managed to play over 2300 shows; most of these which were recorded.  In fact, they’re by far the most recorded band, which can be clearly seen with a quick trip to the internet archive’s live music section.  From bootlegs to soundboards and official releases, there is a plethora of material available for enjoyment from the United States and beyond. </p>
+					<p>The Grateful Dead had one of the most prolific touring careers of any band.  In thirty years of touring, they managed to play over 2300 shows; most of these which were recorded.  In fact, they’re by far the most recorded band, which can be clearly seen with a quick trip to the internet archive’s live music section.  From bootlegs to soundboards and official releases, there is a plethora of listening material available from the United States and beyond. </p>
 				</div>
 				<div class='choropleth-container graphics-container'>
 				</div>
 				<div class='no-graphics'>
+					<p>Despite playing more than thirty tours, the Dead were largely a Bay Area band.  Having played here since the days of The Warlocks, this group has played over 850 shows in California alone.  With the West containing such a large number of shows, how does the rest of the country compare?  As the Grateful Dead traveled across the country, they created an extensive history for us to explore.</p>
 					<p>With a repertoire of more than 400 songs, this seemed like a good place to begin.  In order to better understand the touring habits, it can be useful to consider the follow:</p><p class='bullet'>Where were all of these songs played?</p><p class='bullet'>How does location effect the types of songs played? </p><p>In order to reduce visual clutter, all songs that were played less than ten times were removed, leaving 231 left to analyze.  The graph below shows how many times and where each song was played.  They are ordered and ranked by the number of times they were played globally; a full list can be found on setlist.fm.  Simply hover over the graph to get more exact information.</p>
 				</div>
 				<p class='graph-title'>Songs Played in Each Region, Ordered by Total Plays</p>
@@ -59,12 +60,13 @@
 					<p>It is immediately clear that the average percentages of song plays coincides with the regional distribution of shows.  Roughly 40% of all songs were played in the West with the second most frequent location being the Northeast.  This all comes as no surprise, but establishes a layer of reassurance.  In addition, as the songs become less popular the volatility continues to increase.  Again, there’s no surprise here, as a lower sample size will always have more deviation from the average.</p>
 					<p>Despite the increased volatility, there seems to be an increase in the percentage of songs that are played in the Northeast as the rankings decrease.  Contrary to this is the South, which seems to account for fewer of the songs played when looking at less frequently played songs.  Although these assumptions are visually sound, this simple graphic can’t say whether there is any actual difference.  A quick correlation test can give some insight to the accuracy of this statement. </p>
 				</div>
-				<p class='graph-title'>Correlation Coefficient and Confidence Interval</p>
+				<p class='graph-title'>Correlation Coefficient and Confidence Intervals</p>
 				<div class='graphics-container correlation-container'>
 						
 						<img src='projects/gratefuldead/correlationGraphsnoaxes.png'></img>
 					
 				</div><div class='no-graphics'>	
+					<p>Although the assumed correlations are correct, with a positive correlation for the Northeast and a negative correlation for the South, they are both weak, and the Northeast isn’t even significant.  With some degree of certain, there are correlations between song rank and region, but the extent of the certainty is questionable.  With variance increasing almost exponentially, a transformation of the data would have to be taken for any considerable analysis to be done. </p>
 					<p>While looking at the interactions between songs and locations may be useful, it neglects to consider the concert as a whole.  To do this we can try to quantify how 'unique' a concert was. With the data available, the most obvious way to do so is to consider how likely it is for a specific show to happen.  The logical first step is to find the probability that each song was played; however, this has an adverse side effect.  When finding the joint probability,   there is no chance for a short concert to be considered less likely.  This is due to the fact that all probabilities are, by design, less than one.  Although the number of songs played should be considered, this is not the way to do so.  In order to try to normalize the probabilities with respect to song count, the following equation was used:</p>
 					
 					<div class='math' lang='latex'>
