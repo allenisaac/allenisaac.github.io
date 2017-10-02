@@ -51,8 +51,25 @@ var labelsM = svgArea.append('text')
 						.attr('x',widthArea/8)
 						.attr('y',heightArea/20)
 						.style('fill','#56B896')
-						.text('MIDWEST);
-				
+						.text('MIDWEST');
+var labelsS = svgArea.append('text')
+						.attr('class','area-legend')
+						.attr('x',widthArea/8)
+						.attr('y',21*heightArea/40)
+						.style('fill','#56B896')
+						.text('SOUTH');
+var labelsN = svgArea.append('text')
+						.attr('class','area-legend')
+						.attr('x',widthArea/8)
+						.attr('y',9*heightArea/20)
+						.style('fill','#56B896')
+						.text('NORTHEAST');
+var labelsW = svgArea.append('text')
+						.attr('class','area-legend')
+						.attr('x',widthArea/8)
+						.attr('y',4*heightArea/5)
+						.style('fill','#56B896')
+						.text('WEST');						
 					
 d3.csv("https://allenisaac.github.io/projects/gratefuldead/data.csv", type,function(error, data) {
 	if (error) throw error;
