@@ -198,8 +198,8 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 		gBee.append("text")    
 				.attr('class','label axis-label')	
 				.attr("transform",
-						"translate(" + ((beewidth/2) +marginMap.left - marginMap.top) + " ," + 
-									   (beeheight + marginMap.top + 40) + ")")
+						"translate(" + ((beewidth/2) + marginMap.left - marginMap.right) + " ," + 
+									   (beeheight ) + ")")
 				.style("text-anchor", "middle")
 				.text("Uniqueness");	
 
