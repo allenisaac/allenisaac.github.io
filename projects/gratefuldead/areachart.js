@@ -45,7 +45,14 @@ var stack = d3.stack();
 
 var gArea = svgArea.append("g")
 			.attr("transform", "translate(" + marginArea.left + "," + marginArea.top + ")");
-			
+
+var labelsM = svgArea.append('text')
+						.attr('class','area-legend')
+						.attr('x',widthArea/8)
+						.attr('y',heightArea/20)
+						.style('fill','#56B896')
+						.text('MIDWEST);
+				
 					
 d3.csv("https://allenisaac.github.io/projects/gratefuldead/data.csv", type,function(error, data) {
 	if (error) throw error;

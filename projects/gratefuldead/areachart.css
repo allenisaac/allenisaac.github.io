@@ -88,6 +88,11 @@
 	
 }
 
+.area-legend {
+	font-size:16pxp;
+	font-family: 'arial';
+	font-weight:bold;
+}
 
 .overlay {
 	fill:none;
