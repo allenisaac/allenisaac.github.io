@@ -55,7 +55,7 @@ var labelsM = svgArea.append('text')
 var labelsS = svgArea.append('text')
 						.attr('class','area-legend')
 						.attr('x',widthArea/8)
-						.attr('y',marginArea.top +21*heightArea/40)
+						.attr('y',marginArea.top +11*heightArea/40)
 						.style('fill','#cca4e8')
 						.text('SOUTH');
 var labelsN = svgArea.append('text')
