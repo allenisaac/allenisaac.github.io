@@ -195,7 +195,13 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 			gBee.selectAll('tick text').attr('x', 4).attr('dy', -4);
 		}
 
-
+		gBee.append("text")    
+				.attr('class','label axis-label')	
+				.attr("transform",
+						"translate(" + ((beewidth/2) +marginMap.left - marginMap.top) + " ," + 
+									   (beeheight + marginMap.top + 40) + ")")
+				.style("text-anchor", "middle")
+				.text("Uniqueness");	
 
 			
 		var cell = gBee.append('g')
