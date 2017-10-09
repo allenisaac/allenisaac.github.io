@@ -15,6 +15,7 @@ div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
+	width:80%;
 }
 
 /* Style the buttons inside the tab */
@@ -57,4 +58,7 @@ div.tab button.active {
 
 
 /* knn */
-.knn-container {}
+.knn-container {
+	height:500;
+	width:90%;
+}
