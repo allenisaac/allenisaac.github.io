@@ -54,6 +54,8 @@
 				MOdels: <p>As this is an issue of classification, the traditional machine learning models that will be used are SVM, random forest, K nearest neighbors.  Through various techniques, these models will use our given variables to try to correctly classify the income of an individual.  describe the three of them and the ideas of the parameters  </p>
 				<P>A big issue that was prevelant in all of the models, was an issue of overfitting.  The issue with overfitting comes when there are too many features.  These features can add insignificant or repetetive information.  By using an ANOVA to F-test each variable, we are able to find whether features are significant, within a p-value of 0.05, and remove accordingly.  As the qualitative features can't be left as they are we must first add one-hot features, essentially accounting for each possibiloity of the feature.  There were 77 of the 100 features  that were significant.  The features removed were :L .  For the initial testing, we will use the reduced features.</P>
 				</div>
+				<div class = 'parameter-menu-container'></div>
+				<div class = 'knn-container'></div>
 				<div class = 'tab'>
 				  	<button class="tablinks" onclick="openCity(event, 'svm')">SVM</button>
 					  <button class="tablinks" onclick="openCity(event, 'knn')">KNN</button>
@@ -70,10 +72,9 @@
 				<div id = 'rf', class= 'tabcontent'>
 					stuff3
 				</div>
-				<div class = 'parameter-menu-container'></div>
-				<div class = 'knn-container'></div>
+				
 				<script>
-					function 
+				/*	function 
 						openCity(evt, cityName) {
 							// Declare all variables
 							var i, tabcontent, tablinks;
@@ -93,7 +94,7 @@
 							// Show the current tab, and add an "active" class to the button that opened the tab
 							document.getElementById(cityName).style.display = "block";
 							evt.currentTarget.className += " active";
-						}
+						}*/
 				</script>
 				
 			
