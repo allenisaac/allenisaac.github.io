@@ -34,7 +34,7 @@ gKNN.append('text')
 	.attr('y',-10)
 	.style('text-anchor','middle')
 		
-d3.csv('KNNparemeter.csv', type, function(error, data){
+d3.csv('https://allenisaac.github.io/css/mlexploration/KNNparemeter.csv', type, function(error, data){
 	if (error) throw error;
 	
 	xKNN.domain(d3.extent(data, function(d) { return d.Train_Time; }));
