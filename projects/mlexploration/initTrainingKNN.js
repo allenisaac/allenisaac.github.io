@@ -18,7 +18,7 @@ var yKNN = d3.scaleLinear()
 				.range([heightKNN,0]);
 
 var colorKNN = d3.scaleOrdinal(d3.schemeCategory10);				
-var bisectX = d3.bisector(function(d) {return d.Train_Time;}).left
+
 
 gKNN.append('text')
 	.text('Training Time')
@@ -36,7 +36,7 @@ gKNN.append('text')
 		
 d3.csv('https://allenisaac.github.io/projects/mlexploration/KNNparemeter.csv', type, function(error, data){
 	if (error) throw error;
-	
+	var bisectX = d3.bisector(function(d) {return d.Train_Time;}).left
 	xKNN.domain(d3.extent(data, function(d) { return d.Train_Time; }));
 	yKNN.domain(d3.extent(data, function(d) { return d.Test_Scores; }));
 	
