@@ -15,7 +15,7 @@ div.tab {
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
-	width:80%;
+	width:90%;
 }
 
 /* Style the buttons inside the tab */
@@ -45,6 +45,7 @@ div.tab button.active {
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
+	width:90%;
 }
 
 
