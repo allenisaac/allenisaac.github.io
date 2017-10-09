@@ -6,7 +6,8 @@
 <link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
 <link href = 'https://allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
-<link href = 'https://allenisaac.github.io/projects/gratefuldead/areachart.css' rel='stylesheet'>
+<!--- <link href = 'https://allenisaac.github.io/projects/mlexploration/ml.css' rel='stylesheet'> --->
+<link href = 'C:\Users\ialle\Desktop\Website\allenisaac.github.io\projects\mlexploration\ml.css' rel='stylesheet'>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script src="https://d3js.org/topojson.v2.min.js"></script>
 <script type="text/javascript" src="https://latex.codecogs.com/latexit.js"></script>
@@ -41,4 +42,61 @@
 				<div class='project-title'>
 				United States Census: <p>Exploring Machine Learning Classifiers</p>
 				</div>
+				<div class='description text-container'>
+				<p> The data from the Census can give insight and predictive prowess to all of the questions.  in this case we will look at income.  The census, as publicly available, displays income as a qualitative variable; that is, either more or less than 50k.  </p>
+				<p> The first thing to do is look at the distributions of each variable.  In these cases, the data is clearly biased.  With roughly 70% of all examples being less than 50k!!!!!!!, there is clearly a bias, which will have to be dealt with in modeling. </p>
+				</div>
+				<div class='distribution-container text-container' >
+				United States Census: <p>Exploring Machine Learning Classifiers</p>
+				</div>
+				<div class='models text-container'>
+				MOdels: <p>As this is an issue of classification, the traditional machine learning models that will be used are SVM, random forest, K nearest neighbors.  Through various techniques, these models will use our given variables to try to correctly classify the income of an individual.  describe the three of them and the ideas of the parameters  </p>
+				<P>A big issue that was prevelant in all of the models, was an issue of overfitting.  The issue with overfitting comes when there are too many features.  These features can add insignificant or repetetive information.  By using an ANOVA to F-test each variable, we are able to find whether features are significant, within a p-value of 0.05, and remove accordingly.  As the qualitative features can't be left as they are we must first add one-hot features, essentially accounting for each possibiloity of the feature.  There were 77 of the 100 features  that were significant.  The features removed were :L .  For the initial testing, we will use the reduced features.</P>
+				</div>
+				<div class = 'tab'>
+				  	<button class="tablinks" onclick="openCity(event, 'svm')">SVM</button>
+					  <button class="tablinks" onclick="openCity(event, 'knn')">KNN</button>
+					  <button class="tablinks" onclick="openCity(event, 'rf')">Random Forest</button>
+				</div>
+				
+				<div id = 'svm', class= 'tabcontent'>
+					
+				</div>
+				<div id = 'knn', class= 'tabcontent'>
+					<div class = 'parameter-menu-container'></div>
+					<div class = 'knn-container'></div>
+				</div>
+				<div id = 'rf', class= 'tabcontent'>
+					stuff3
+				</div>
+				<script>
+					function 
+						openCity(evt, cityName) {
+							// Declare all variables
+							var i, tabcontent, tablinks;
+
+							// Get all elements with class="tabcontent" and hide them
+							tabcontent = document.getElementsByClassName("tabcontent");
+							for (i = 0; i < tabcontent.length; i++) {
+								tabcontent[i].style.display = "none";
+							}
+
+							// Get all elements with class="tablinks" and remove the class "active"
+							tablinks = document.getElementsByClassName("tablinks");
+							for (i = 0; i < tablinks.length; i++) {
+								tablinks[i].className = tablinks[i].className.replace(" active", "");
+							}
+
+							// Show the current tab, and add an "active" class to the button that opened the tab
+							document.getElementById(cityName).style.display = "block";
+							evt.currentTarget.className += " active";
+						}
+				</script>
+				
 			
+		
+	
+
+
+<!--- <script src = 'https://allenisaac.github.io/projects/mlexploration/initTrainingKNN.js'></script> --->
+		<script src = 'https://allenisaac.github.io/css/mlexploration/initTrainingKNN.js'></script>
