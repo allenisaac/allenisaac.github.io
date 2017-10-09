@@ -32,7 +32,7 @@ var color2KNNO = d3.scalePow()
 var colorKNNO = d3.scaleSqrt()
 	//.domain(d3.extent(data, function(d){return +d.Test_Score;}))
 	.range([1,100])				
-d3.csv('KNNoutlierstuff.csv', function(error, data){
+d3.csv('https://allenisaac.github.io/projects/mlexploration/KNNoutlierstuff.csv', function(error, data){
 	if(error) throw error;
 	
 	/// initial button styling
@@ -77,6 +77,21 @@ d3.csv('KNNoutlierstuff.csv', function(error, data){
 						.style('text-anchor','middle')
 						.attr('transform', 'translate(' + gridSizeKNNO / 2 + ', -6)');
 						
+	gKNNO.append('text')
+		.text('Outlier Percentile')
+		.attr('class','Oaxis')
+		.attr('x',10*gridSizeKNNO)
+		.attr('y',-20)
+		.style('text-anchor','middle');
+
+	gKNNO.append('text')
+		.text('Feature Percentile')
+		.attr('class','Oaxis')
+		//.attr('x',-20)
+		//.attr('y',10*gridSizeKNNO)
+		.attr('transform','translate('+ (-40) + ', ' + 10*gridSizeKNNO + ')rotate(270)')
+		.style('text-anchor','middle');
+		
 	var heatMapKNNO = gKNNO.selectAll('.score')
 						.data(data)
 						.enter().append('rect')

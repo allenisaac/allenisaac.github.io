@@ -92,7 +92,7 @@ d3.csv('https://allenisaac.github.io/projects/mlexploration/KNNparemeter.csv', t
 			
 	var columnsKNN = ['Norm','Algorithm','P', 'Neighbors'];
 
-	var selectorKNN = d3.select('.parameter-menu-container')
+	var selectorKNN = d3.select('.knn-parameter-menu-container')
 	
 	selectorKNN.append('select')
 		.attr('class','dropmen knn-menu')
