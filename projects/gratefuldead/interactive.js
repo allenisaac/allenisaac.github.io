@@ -199,7 +199,7 @@ d3.json("https://gist.githubusercontent.com/mbostock/4090846/raw/d534aba16920754
 				.attr('class','label axis-label')	
 				.attr("transform",
 						"translate(" + ((beewidth/2) + marginMap.left - marginMap.right) + " ," + 
-									   (beeheight ) + ")")
+									   0 + ")")
 				.style("text-anchor", "middle")
 				.text("Uniqueness");	
 

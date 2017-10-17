@@ -54,18 +54,44 @@
 				MOdels: <p>As this is an issue of classification, the traditional machine learning models that will be used are SVM, random forest, K nearest neighbors.  Through various techniques, these models will use our given variables to try to correctly classify the income of an individual.  describe the three of them and the ideas of the parameters  </p>
 				<P>A big issue that was prevelant in all of the models, was an issue of overfitting.  The issue with overfitting comes when there are too many features.  These features can add insignificant or repetetive information.  By using an ANOVA to F-test each variable, we are able to find whether features are significant, within a p-value of 0.05, and remove accordingly.  As the qualitative features can't be left as they are we must first add one-hot features, essentially accounting for each possibiloity of the feature.  There were 77 of the 100 features  that were significant.  The features removed were :L .  For the initial testing, we will use the reduced features.</P>
 				</div>
-
-				<div class = 'knn-parameter-menu-container'></div>
-				<div class = 'knn-container'></div>
-
-				<div class = 'knno-menu-container'></div>
-				<div class = 'KNNO-container'></div>
-
 				
-			
-		
+				<div class= 'text-container'>
+					K-Nearest Neighbors
+					<p></p>
+				</div>
+						
+				<div class = 'KNN'>
+					<div class = 'knn-parameter-menu-container'></div>
+					<div class = 'knn-container graphics-container'></div>
+				</div>
+				
+				<div class = 'KNNO'>
+
+					<div class = 'knno-menu-container'></div>
+					<div class = 'KNNO-container graphics-container'></div>
+				</div>
+
+				<div class = 'RF'>
+					<div class = 'RF-parameter-menu-container'></div>
+					<div class = 'RF-container graphics-container'></div>
+				</div>
+				
+				<div class = 'RFO'>
+					<div class = 'RFO-menu-container'></div>
+					<div class = 'RFO-container graphics-container'></div>
+				</div>
+				
+				<div class = 'SVM'>
+					<div class = 'SVM-parameter-menu-container'></div>
+					<div class = 'SVM-container graphics-container'></div>
+				</div>
+
 	
 
 
 <script src = 'https://allenisaac.github.io/projects/mlexploration/initTrainingKNN.js'></script>
 <script src = 'https://allenisaac.github.io/projects/mlexploration/knnGrid.js'></script>
+<script src = 'https://allenisaac.github.io/projects/mlexploration/initTrainingRF.js'></script>
+<script src = 'https://allenisaac.github.io/projects/mlexploration/rfGrid.js'></script>
+<script src = 'https://allenisaac.github.io/projects/mlexploration/initTrainingSVM.js'></script>
+<script src = 'https://allenisaac.github.io/projects/mlexploration/svmGrid.js'></script>
