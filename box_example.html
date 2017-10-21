@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+</style>
+<body>
+<div class = 'menu-container'></div>
+<div class = 'container', width = 900, height = 500></div>
+<div class = 'text'>
+<p>Exact numbers next to each line can be added, and so can axes.  This sort of graph can be useful for comparing an individual to the performance of the whole, as well as one other point.  Individual performance can be shown by clicking
+through the dropdown.  It is also good to note that automated text 
+can be added, and with a few equations, a sentece such as "(selected user) needs X more patients to do (what this is measuring) to reach the goal".  </p>
+</div>
+<script src="//d3js.org/d3.v4.min.js"></script>
+
+<script>
+
+var margin = {top:30,right:70,bottom:30,left:30},
+	/*width = parseInt(d3.select('.container').style('width'), 10),
+	width = width - margin.left - margin.right,
+	height = parseInt(d3.select('.container').style('height'), 10),
+	height = height - margin.top - margin.bottom;	*/
+	width = 900 - margin.left - margin.right,
+	height = 500 - margin.top - margin.bottom;
+
+var min = Infinity,
+	max = -Infinity;
+	
+var svg = d3.select('.container').append('svg')
+	.attr('width', width + margin.left + margin.right)
+	.attr('height',height + margin.top + margin.bottom)
+	.attr('transform','translate(' + margin.left + ',' + margin.top + ')')
+/*	.append('g')
+	.attr('transform','translate(' + margin.left + ',' + margin.top + ')');
+	
+var g = svg.append('g')
+	.attr('transform','translate(50,50)');*/
+
+var cats = ['category1','category2','category3'];	
+var percenta = ['perc1','perc2','perc3'];	
+var barWidth = 20;
+
+var x = d3.scalePoint()
+			.rangeRound([0, width])
+			.domain(percenta)
+			.padding([0.5]);
+
+var y = d3.scaleLinear()
+			.range([height, 0])
+			.domain([0,100]);
+	
+d3.csv('example.csv', type, function(error, data) {
+	if (error) throw error;
+	
+	//console.log(data.map(function(d) { return d.perc1}))
+
+	var newdata2 = []
+	var k;
+	for (k in percenta) {
+		var temp = data.map(function(d) { return d[percenta[k]]});
+		newdata2[k] = boxNumbers(temp.sort(), k)
+	}
+	
+	
+	console.log(data)
+	console.log(newdata2)
+	/*newdata2 = d3.transpose(newdata2)
+
+	
+	var newdata = {
+		min: newdata2[0],
+		twofive: newdata2[1],
+		median: newdata2[2],
+		sevenfive: newdata2[3],
+		max: newdata2[4]
+	}*/
+
+	var verticalLines = svg.selectAll('.verticalLines')
+		.data(newdata2)
+		.enter()
+		.append('line')
+		.attr('x1',function(d){ return x(d.category) + barWidth/2})
+		.attr('x2',function(d){ return x(d.category)+ barWidth/2})
+		.attr('y1', function(d){return y(d.max);})
+		.attr('y2', function (d){ return y(d.min);})
+		.attr('stroke','#000')
+		.attr('stroke-width',1.5)
+		.attr('fill','none')
+		
+	var rectangles = svg.selectAll('.rect')
+		.data(newdata2)
+		.enter()
+		.append('rect')
+		.attr('width', 20)
+		.attr('height', function (d) { return (y(d.twofive)) - y(d.sevenfive)})
+		.attr('x', function(d) { return x(d.category)})
+		.attr('y', function (d){return y(d.sevenfive)})
+		.attr('stroke','#000')
+		.attr('stroke-width',1.5)
+		.attr('fill','white')
+	
+	var medianLine = svg.selectAll('.whisker-median')
+		.data(newdata2)
+		.enter()
+		.append('line')
+		.attr('stroke','#000')
+		.attr('stroke-width',1.5)
+		.attr('fill','none')		
+		.attr('x1',function(d){ return x(d.category) })
+		.attr('x2',function(d){ return x(d.category) +barWidth})
+		.attr('y1',function(d){ return y(d.median)})
+		.attr('y2',function(d){ return y(d.median)})		
+
+	var quartLine1 = svg.selectAll('.whisker-lowquart')
+		.data(newdata2)
+		.enter()
+		.append('line')
+		.attr('stroke','#000')
+		.attr('stroke-width',1.5)
+		.attr('fill','none')	
+		.attr('x1',function(d){ return x(d.category)})
+		.attr('x2',function(d){ return x(d.category) +barWidth})
+		.attr('y1',function(d){ return y(d.min)})
+		.attr('y2',function(d){ return y(d.min)})		
+
+	var quartLine2 = svg.selectAll('.whisker-highquart')
+		.data(newdata2)
+		.enter()
+		.append('line')
+		.attr('stroke','#000')
+		.attr('stroke-width',1.5)
+		.attr('fill','none')			
+		.attr('x1',function(d){ return x(d.category) })
+		.attr('x2',function(d){ return x(d.category) +barWidth})
+		.attr('y1',function(d){ return y(d.max)})
+		.attr('y2',function(d){ return y(d.max)})	
+		
+//goal
+	var goals = [
+		{percs: 'perc1',value:80},
+		{percs: 'perc2',value:65},
+		{percs: 'perc3', value:90}
+	]
+	console.log(goals)
+	var goalLine = svg.selectAll('.goalline')
+		.data(goals)
+		.enter()
+		.append('line')
+		.attr('class','goalline')		
+		.attr('stroke','#c1438b')
+		.attr('stroke-width',4)
+		.attr('fill','none')
+		.attr('x1',function(d){ return x(d.percs) -barWidth/2})
+		.attr('x2',function(d){ return x(d.percs) +3*barWidth/2})
+		.attr('y1',function(d){ return y(d.value)})
+		.attr('y2',function(d){ return y(d.value)})		
+		
+//legend
+	var legend = svg.append('g')
+		.attr('class','legend')
+	
+	legend.append('line')
+		.attr('x1', (width-30))
+		.attr('x2',width)
+		.attr('y1',margin.top)
+		.attr('y2',margin.top)
+		.attr('stroke','#c1438b')
+		.attr('stroke-width',4)
+		.attr('fill','none')
+	
+	legend.append('line')
+		.attr('x1', (width-30))
+		.attr('x2',width)
+		.attr('y1',(margin.top+30))
+		.attr('y2',(margin.top+30))
+		.attr('stroke','#f2c94f')
+		.attr('stroke-width',4)
+		.attr('fill','none')	
+		
+	legend.append('text')
+		.attr('x',(width + 5))
+		.attr('y',(margin.top+35))
+		.attr('font-size','12px')
+		.text('User')
+		
+	legend.append('text')
+		.attr('x',(width + 5))
+		.attr('y',(margin.top+5))
+		.attr('font-size','12px')
+		.text('Goal')	
+//selector
+
+	var selector = d3.select('.menu-container')
+	
+	selector.append('select')
+		.attr('class','menu')
+		.selectAll('option')
+			.data(data)
+			.enter()
+			.append('option')
+				.attr('value',function(d){return d.names})
+				.text(function(d){return d.names;});
+
+
+
+	var userLine1 = svg.selectAll('.userline')
+		.data(data)
+		.enter()
+		.append('line')
+		.attr('class','userline')		
+		.attr('stroke','#f2c94f')
+		.attr('stroke-width',4)
+		.attr('fill','none')
+		.style('display','none')
+		.attr('x1',function(d){ return x('perc1') -barWidth/2})
+		.attr('x2',function(d){ return x('perc1') +3*barWidth/2})
+		.attr('y1',function(d){ return y(d.perc1)})
+		.attr('y2',function(d){ return y(d.perc1)})
+		
+	var userLine2 = svg.selectAll('.userline1')
+		.data(data)
+		.enter()
+		.append('line')
+		.attr('class','userline1')		
+		.attr('stroke','#f2c94f')
+		.attr('stroke-width',4)
+		.attr('fill','none')
+		.style('display','none')
+		.attr('x1',function(d){ return x('perc2') -barWidth/2})
+		.attr('x2',function(d){ return x('perc2') +3*barWidth/2})
+		.attr('y1',function(d){ return y(d.perc2)})
+		.attr('y2',function(d){ return y(d.perc2)})	
+
+		var userLine3 = svg.selectAll('.userline2')
+		.data(data)
+		.enter()
+		.append('line')
+		.attr('class','userline2')
+		.attr('stroke','#f2c94f')
+		.attr('stroke-width',4)
+		.attr('fill','none')
+		.style('display','none')
+		.attr('x1',function(d){ return x('perc3') -barWidth/2})
+		.attr('x2',function(d){ return x('perc3') +3*barWidth/2})
+		.attr('y1',function(d){ return y(d.perc3)})
+		.attr('y2',function(d){ return y(d.perc3)})		
+
+	selector.on('change', function(){
+		var newUser = d3.select(this)
+						.select('.menu')
+						.property('value');
+		updateUser(newUser);
+		});		
+		
+});
+function type(d) {
+	if (d == d.names) return;
+	d.perc1 = +d.perc1;
+	d.perc2 = +d.perc2;
+	d.perc3 = +d.perc3;
+	d.total = +d.total;
+	return d
+};
+	
+function boxNumbers(d, j) {
+	return {
+		min: d3.min(d),
+		twofive: d3.quantile(d, 0.25),
+		median: d3.quantile(d, 0.5),
+		sevenfive: d3.quantile(d, 0.75),
+		max: d3.max(d),
+		category: percenta[j]}
+		
+};
+	
+function sorter (a,b) {
+	return a - b;
+};
+
+function updateUser(name) {
+	svg.selectAll('.userline')
+		.style('display', function(d) { 
+			if (name == d.names) {return null;} else { return 'none';};})
+	svg.selectAll('.userline1')
+		.style('display', function(d) { 
+			if (name == d.names) {return null;} else { return 'none';};})
+	svg.selectAll('.userline2')
+		.style('display', function(d) { 
+			if (name == d.names) {return null;} else { return 'none';};});
+		};		
+</script>
