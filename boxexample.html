@@ -48,7 +48,7 @@ var y = d3.scaleLinear()
 			.range([height, 0])
 			.domain([0,100]);
 	
-d3.csv('example.csv', type, function(error, data) {
+d3.csv('https://allenisaac.github.io/example.csv', type, function(error, data) {
 	if (error) throw error;
 	
 	//console.log(data.map(function(d) { return d.perc1}))
