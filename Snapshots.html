@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = 'UTF-8'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Dosis:400,800" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+<link href = 'https://allenisaac.github.io/projects/snapshots/styles.css' rel='stylesheet'>
+<link href = 'https://allenisaac.github.io/css/headerfooterstyles.css' rel='stylesheet'>
+
+</head>
+
+
+	<body>
+		<div class = 'wrapper'>
+			<div class = 'main-header-container'>
+				<nav class='navigator'>
+					<li class='title'><a href='https://allenisaac.github.io/index.html' class = 'header-button blog-title'>Isaac Allen</a></li>
+					<li><a href='https://allenisaac.github.io/index.html' class = 'header-button lesser-header'>Home</a></li>
+					<li><a href='https://allenisaac.github.io/about.html' class = 'header-button lesser-header'>About</a></li>
+					<li><a href='https://allenisaac.github.io/contact.html' class = 'header-button lesser-header'>Contact</a></li>
+				</nav>
+				<div class='footer'>
+				&copy;2017 Isaac Allen
+				</div>
+			</div>
+			<div tabindex='0' class='onclick-dropdown'>
+				<div  class='dropdown-item-container'>
+					<ul class="onclick-menu-content">
+						<li><button onclick="location.href='https://allenisaac.github.io/index.html'">Home</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/about.html'">About</button></li>
+						<li><button onclick="location.href='https://allenisaac.github.io/contact.html'">Contact</button></li>
+					</ul>
+				</div>
+			</div>			
+			<div class='right-container'>
+				<div class='project-title'>
+				Practitioner Snapshots
+				</div>
+				<div class='description'>
+				<p>The dashboard at the bottom of the page was created for a medical group to give practitioners a "snapshot" of how they're performing on various quality and productivity measures.  In this version, the users and measures have been removed, there are only 12 months of data included, 
+				and the data has been changed slightly to remove company specific information. </p>
+				<p>
+				The major difficulty in this project was making it useful for a wide range of users.  There are those who are interested are interested in looking at their data, figuring out what has been happening and how they may be able to improve, and then there are others that may only look at this a few times every year.
+				This dashboard aims to have a simply, easy to view layout that provides additional detail for those willing to look.  The dashboard contains a table, which had been used prior to the dashboard, where all the information is laid out plainly.  To the right, there is a horizontal bar graph that allows users to quickly
+				see how well they're doing on their quarterly goals, which for many users, is all they're interested in.  The layout here is fairly simple, so they can see if they are above, at, or below their goals.
+				</p>
+				<p>
+				At the bottom, there is a line graph and box and whisker plot so users can easily compare themselves to their colleagues and view their progress over time.  There are some subtleties here that allow for a more indepth look at the data, without taking away from the simplistic view.  Hovering over the line graph gives
+				exact information, so users don't have to switch between months to see how they're doing.  Also, the month points on the line have a radius proportional to the number of patients seen, so any major changes attributed to a change in sample size can be quickly noticed.  The transparent lines in the back represent 
+				colleagues from the same specialty, so company wide trends can be seen, without adding too much visual clutter.  In addition, measures in the table and horizontal bar graph can be clicked to change the measure quickly.
+				</p>
+				<p>
+				
+				</p>
+				</div>
+				<div class='unnecessary-container'>
+					<div class = "menu-containers">
+						<div class = "provider-text-container">Provider: </div>
+						<div class = "provider-menu-container menu"></div>
+						<div class = "measure-text-container">Measure: </div>
+						<div class = "measure-menu-container menu"> </div>
+						<div class = "month-text-container">Month: </div>
+						<div class = "month-menu-container menu"> </div>
+					</div>
+					<div class = "line-one" height = 800>
+						<div class = "table-container" width = 600 height = 500"></div>
+						<div class = "graph1-container" width = 500 height = 500 ></div>
+
+					</div>
+					<div class = "line-two"  height = 500 >
+						<div class = "legend-container" width = 200 height = 500></div>
+						<div class = "graph2-container" width = 900 height = 500></div>
+						<div class = "graph3-container" width = 200 height = 500></div>
+
+
+					</div>
+					<div class = "text-container" width = 900 height = 500>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src = 'https://allenisaac.github.io/projects/snapshots/Snapshots.js'></script>
+	</body>
+</html>
