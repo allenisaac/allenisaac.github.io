@@ -425,7 +425,7 @@ var measures =      ["Measure 1",
 
 var providers = d3.map(providerRef[0]).keys()//.sort(d3.ascending)
 var currentMonth = "Oct-18"
-var dataLink = 'https://allenisaac.github.io/projects/snapshots/currentDataCopy.json'
+var dataLink = 'https://allenisaac.github.io/projects/Snapshots/currentDataCopy.json'
 
 
 /////################################################################/////
