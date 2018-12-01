@@ -349,7 +349,7 @@ var parseTime = d3.timeParse("%b-%y"),
 	bisectDate = d3.bisector(function(d) { return d.Month; }).left;
 
 var windowWidth = d3.select("body").node().getBoundingClientRect().width
-var wrapperWidth =  document.getElementsByClassName('unecessary-container')[0].clientWidth;
+var wrapperWidth =  document.getElementsByClassName('unnecessary-container')[0].clientWidth;
 //reference for formatting by measurement
 var measureFormat = [{
 	"Measure 1":basicFormat,
@@ -566,7 +566,7 @@ d3.json(dataLink, function(data) {
 	
 	function redraw(){
 		wrapperWidth = window.innerWidth - document.getElementsByClassName('main-header-container')[0].clientWidth;
-		d3.select('.unecessary-container')
+		d3.select('.unnecessary-container')
 			.attr('width', wrapperWidth)	
 		d3.select('.menu-containers')
 			.attr('width', wrapperWidth)		
