@@ -613,7 +613,7 @@ d3.json(dataLink, function(data) {
 		d3.select(".graph3-container")
 			.datum(data)
 			.call(chart3);
-		d3.select('.menu-containers').style('left', 50).raise()
+		d3.select('.menu-containers').raise()
 	}	
 	
 	redraw()
