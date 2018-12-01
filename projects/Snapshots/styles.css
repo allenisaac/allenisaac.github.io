@@ -223,7 +223,6 @@ tr:hover {background-color: #f5f5f5;}
 	}
 .line-two{
 	width:100%;
-	position:relative;
 
 }
 
@@ -272,7 +271,6 @@ tr:hover {background-color: #f5f5f5;}
 }
 .menu-containers {
 	display: inline-block;
-	position: fixed;
 	background-color: white;
 	box-shadow: 2px 2px 7px -2px black;
 	width: 100%;
