@@ -349,7 +349,7 @@ var parseTime = d3.timeParse("%b-%y"),
 	bisectDate = d3.bisector(function(d) { return d.Month; }).left;
 
 var windowWidth = d3.select("body").node().getBoundingClientRect().width
-
+var wrapperWidth =  document.getElementsByClassName('unecessary-container')[0].clientWidth;
 //reference for formatting by measurement
 var measureFormat = [{
 	"Measure 1":basicFormat,
@@ -562,6 +562,65 @@ d3.json(dataLink, function(data) {
 	d3.select(".graph3-container")
 	  .datum(data)
 	  .call(chart3);
+
+	
+	function redraw(){
+		wrapperWidth = window.innerWidth - document.getElementsByClassName('main-header-container')[0].clientWidth;
+		d3.select('.unecessary-container')
+			.attr('width', wrapperWidth)	
+		d3.select('.menu-containers')
+			.attr('width', wrapperWidth)		
+		d3.select('.menu-containers svg')
+			.attr('width', wrapperWidth)				
+		d3.select('.line-one')
+			.attr('width', wrapperWidth)
+		d3.select('.line-two')
+			.attr('width', wrapperWidth)		
+		if(wrapperWidth >= 980) {
+			chart.width(wrapperWidth * 0.26)//250
+				.margin({top:105, right: 0, bottom:40, left:5});			
+			d3.select(".graph1-container")
+				.attr('width', wrapperWidth * 0.26)
+				.style('padding-top', '90px')
+			chart2.width(wrapperWidth * 0.65) //650
+					.margin({top:75, right:wrapperWidth * 0.01, bottom:20, left:50});
+			d3.select(".graph2-container")
+				.attr('width', wrapperWidth * 0.65)					
+			chart3.width(wrapperWidth * 0.23) //215
+					.margin({top:75, right: 0, bottom:20, left:wrapperWidth * 0.05});
+			d3.select(".graph3-container")
+				.attr('width', wrapperWidth * 0.23)					
+		} else {
+			chart.width(wrapperWidth < 500 ? wrapperWidth * 0.94 : 500)//250	
+			d3.select(".graph1-container")
+				.attr('max-width', wrapperWidth < 500 ? wrapperWidth * 0.94 : 500)		
+				.style('padding-top', '0px')				
+			chart3.width(wrapperWidth * 0.93)//250
+				.margin({top:75, right: 0, bottom:20, left:wrapperWidth * 0.05});
+			d3.select(".graph2-container")
+				.attr('max-width', wrapperWidth * 0.93)					
+			chart2.width(wrapperWidth * 0.92) //650
+				.margin({top:75, right:wrapperWidth * 0.03, bottom:20, left:wrapperWidth * 0.04});
+			d3.select(".graph3-container")
+				.attr('max-width', wrapperWidth * 0.92)				
+	}			
+		d3.select(".graph1-container")
+		  .datum(data)
+		  .call(chart);	
+		d3.select(".graph2-container")
+		  .datum(data)
+		  .call(chart2);
+		d3.select(".graph3-container")
+			.datum(data)
+			.call(chart3);
+		d3.select('.menu-containers').style('left', 50).raise()
+	}	
+	
+	redraw()
+		
+	window.addEventListener("resize", redraw);	
+	
+	
 	
 	// helper function to return all indexes of a value in an array
 	function getAllIndexes(arr, val) {
